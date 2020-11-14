@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <title>ÜzeyirPeygamber.com</title>
+    <style>
+        .header{
+            width: 84.3;
+            height: 8em;
+            background-color: blue;
+        }
+    
+    
+    
+        .kayanresim{
+            width: 84.3em;
+            height: 25em;
+        }
+        #sliderust{
+            width: 84.3em;
+            height: 21em;
+        }
+        #slideralt{
+            width: 84.3 em;
+            height: 4em;
+            background: black;
+        }
+        #slideraltic{
+            width: 400px;
+            height: 4em;
+            margin: 0 auto;
+        }
+        #slideraltic ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #slideraltic ul li{
+            display: block;
+            width: 30px; 
+            height: 4em;
+            float: left;
+            font: bold 16px arial;
+            color: #FFF;
+            text-align: center;
+            line-height: 4em;
+            cursor: pointer;
+        }
+        li:hover{
+            background-color: red;
+        }
+    
+    
+    
+        .foto{
+            width: 84em;
+            height: 40em;
+        }
+        .kutu{
+          width: 84em;
+          height: 40em;
+        }
+        .kutu1{
+          width: 28em;
+          height: 40em;
+          float: left;
+          padding: 3em 0 0 5em;
+        }
+        .kutu2{
+          width: 28em;
+          height: 40em;
+          float: left;
+          padding: 3em 0 0 5em;
+        }
+        .kutu3{
+          width: 28em;
+          height: 40em;
+          float: left; 
+          padding: 3em 0 0 5em;
+        }
+    
+    
+    
+        .footer{
+            width: 84em;
+            height: 26em;
+            background: rgb(55, 53, 53);
+            color: blanchedalmond;
+        }
+        .bolum1{
+          width: 28em;
+          height: 20em;
+          float: left;
+          margin: 4em 0 0 0;
+          padding: 0 0 0 2em;
+        }
+        .bolum2{
+          width: 27em;
+          height: 22em;
+          float: left;
+          margin: 3em 0 0 1em;
+          padding: 1em 0 0 6em;
+        }
+        .bolum3{
+          width: 28em;
+          height: 26em;
+          float: left;
+          padding: 4em 0 0 2em;
+        }
+        .fa fa-facebook-square {margin: 0 2px 0 0}
+        .fa fa-map-marker {margin: 0 2px 0 0}
+        .fa fa-phone {margin: 0 2px 0 0}
+    
+    
+    
+            </style>
+            <script>
+              var zaman;
+              var resimler=new Array("","url(yusuf1.png)","url(yusuf2.png)","url(yusuf3.png)","url(yusuf1.png)","url(yusuf2.png)","url(yusuf3.png)",
+              "url(yusuf1.png)","url(yusuf2.png)","url(yusuf3.png)","url(yusuf1.png)");
+              function degis(x)
+              {
+                window.clearInterval(zaman);
+                for(var i=1; i<=10; i++){
+                    if(x==i){
+                      document.getElementById("sayi"+i).style.background="red";
+                      document.getElementById("sliderust").style.background=resimler[x];
+                    }
+                    else{
+                      document.getElementById("sayi"+i).style.background="black";
+                    }
+                  }
+                document.getElementById("sliderust").style.background=resimler[x];
+              }
+    
+              function baslat(z){
+                if(z==1){
+                  document.getElementById("sliderust").style.background=resimler[z];
+                  document.getElementById("sayi"+z).style.background="red";
+                }
+    
+                zaman=window.setInterval(function(){
+                  document.getElementById("sliderust").style.background=resimler[z];
+                  for(var i=1; i<=10; i++){
+                    if(z==i){
+                      document.getElementById("sayi"+i).style.background="red";
+                    }
+                    else{
+                      document.getElementById("sayi"+i).style.background="black";
+                    }
+                  }
+                  z++;
+                  if(z==11){
+                    z=1;
+                  }
+    
+                },1700)
+              }
+            </script></style>
+</head>
+<body>
+
+    {% include "includes/navbar.html" %}
+
+    <br><br><br>
+    <div class = "container">
+        {% include "includes/messages.html" %}
+            {% block body %}
+    
+            {% endblock %}
+
+    </div>
+    
+
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script src="https://cdn.ckeditor.com/4.8.0/standard/ckeditor.js"></script>
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+        <script>
+			CKEDITOR.replace('content',{
+                allowedContent : true
+            });
+		</script>
+    </body>
+</html>
